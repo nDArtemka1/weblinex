@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  
   pages: true,
   modules: [
     '@nuxt/image',
@@ -30,6 +31,7 @@ export default defineNuxtConfig({
     //   baseURL: 'http://weblinex.ru/images/'
     // }
   },
+  
   app: {
     head: {
       title: 'Создание и продвижение сайтов в Йошкар-Оле | Заказать сайт под ключ » Создание и продвижение сайтов в Йошкар-Оле | Заказать сайт под ключ',
