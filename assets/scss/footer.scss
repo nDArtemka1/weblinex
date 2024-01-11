@@ -1,48 +1,7 @@
-<template>
-	<footer class="footer">
-		<div class="footer-info container-content">
-			<div class="footer-info-left">
-				<div class="footer-info-title">
-					<NuxtLink to="/" class="title"><h2>WEBLINEX.RU</h2></NuxtLink>
-					<div class="footer-info-item">
-						<b>Рабочие часы:</b>
-						<span
-							>Пн — Пт: с 8.00 до 20.00; <br />
-							Сб — Вс: выходной</span
-						>
-					</div>
-				</div>
-
-				<div class="footer-info-item">
-					<div class="title"><h3>Контактный телефон:</h3></div>
-					<NuxtLink to="tel:+79177023497" class="phone-link"
-						>+7 (917) 702-34-97</NuxtLink
-					>
-					<FooterSocial />
-				</div>
-			</div>
-
-			<div class="footer-privacy-policy">
-				<div class="footer-copyright">
-					© 2021–2023, WEB LINEX - weblinex@gmail.com
-				</div>
-				<NuxtLink to="#">
-					Политика сайта и обработка персональных данных</NuxtLink
-				>
-			</div>
-		</div>
-	</footer>
-</template>
-
-<script setup>
-import FooterSocial from '@/components/all/footer/FooterSocial';
-</script>
-
-<style lang="scss">
 .footer {
 	width: 100%;
 	height: 100%;
-	background-image: url('https://weblinex.ru/images/header/header-bg.png');
+	background-image: url('https://mic-fin-org.ru/images/header/header-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: right 35% bottom 45%;
@@ -226,61 +185,3 @@ import FooterSocial from '@/components/all/footer/FooterSocial';
 		}
 	}
 }
-
-@media (max-width: 670px) {
-	.footer {
-		&-info {
-			&-left {
-				flex-direction: column;
-				align-items: center;
-			}
-		}
-		&-privacy-policy a {
-			text-align: center;
-		}
-		&-copyright {
-			text-align: center;
-		}
-	}
-}
-
-@media (max-width: 577px) {
-	.footer {
-		&-info {
-			&-title {
-				text-align: center;
-			}
-		}
-	}
-}
-
-@media (max-width: 340px) {
-	.footer {
-		&-info {
-			.title {
-				h2 {
-					font-size: max(35px, min(50px, var(--base-scale) * 5));
-				}
-			}
-			&-item {
-				.title {
-					h2 {
-						font-size: max(24px, min(50px, var(--base-scale) * 5));
-					}
-					h3 {
-						font-size: max(24px, min(50px, var(--base-scale) * 5));
-					}
-				}
-				.phone-link {
-					font-size: max(30px, min(50px, var(--base-scale) * 5));
-				}
-			}
-		}
-		&-social {
-			&-item:not(:last-child) {
-				margin-right: 25px;
-			}
-		}
-	}
-}
-</style>
