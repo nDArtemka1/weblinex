@@ -33,7 +33,7 @@ import NavMobile from '@/components/all/nav/NavMobile';
 import Footer from '@/components/all/footer/Footer';
 import Contacts from '@/components/all/contacts/Contacts';
 import Form from '@/components/all/form/Form';
-import Modal from '@/components/all/modal/Modal';
+import Modal from '@/components/universal/modal/Modal';
 
 const main = ref();
 let ctx;

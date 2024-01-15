@@ -194,10 +194,13 @@ const advantagesItems = ref([
 
 <style lang="scss">
 .advantages {
+	max-width: 1920px;
+	margin: 0 auto;
 	position: relative;
-	background-image: url(https://weblinex.ru/images/advantages/adv-bg.png);
-	background-repeat: no-repeat;
-	background-position: top -320px right 0px;
+	background: url(https://weblinex.ru/images/advantages/adv-bg.png) no-repeat
+		center center fixed;
+	background-position: bottom -75px right 0px;
+
 	&-wrap {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);

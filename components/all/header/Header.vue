@@ -6,7 +6,9 @@
 					<HeaderContent />
 				</div>
 			</div>
-			<div class="container"><Preloader /></div>
+			<div class="container" v-if="viewport.isGreaterThan('tablet')">
+				<Preloader />
+			</div>
 		</section>
 	</header>
 </template>
@@ -14,6 +16,7 @@
 <script setup>
 import HeaderContent from '@/components/all/header/HeaderContent';
 import Preloader from '@/components/all/header/Preloader';
+const viewport = useViewport();
 </script>
 
 <style lang="scss">
@@ -37,7 +40,7 @@ import Preloader from '@/components/all/header/Preloader';
 			justify-content: flex-start;
 			background-image: url('https://weblinex.ru/images/header/developer.png');
 			background-repeat: no-repeat;
-			background-position: bottom -3vw right 0px;
+			background-position: bottom -30px right 0px;
 			background-size: clamp(400px, 100%, 600px);
 			z-index: 1;
 		}
@@ -128,7 +131,7 @@ import Preloader from '@/components/all/header/Preloader';
 		&-intro {
 			height: 100%;
 			&-wrap {
-				background-position: bottom -3vw right -135px;
+				background-position: bottom -30px right -20px;
 				background-size: clamp(300px, 100%, 450px);
 			}
 		}
@@ -146,6 +149,13 @@ import Preloader from '@/components/all/header/Preloader';
 		&-promo {
 			font-size: 17.5px;
 		}
+	}
+}
+
+@media (max-width: 862px) {
+	.header-intro-wrap {
+		background-position: bottom -30px right -135px;
+		background-size: clamp(300px, 100%, 450px);
 	}
 }
 

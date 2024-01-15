@@ -1,5 +1,5 @@
 <template>
-	<div class="sections-menus d-none d-lg-block">
+	<div class="sections-menus" v-if="viewport.isGreaterThan('tablet')">
 		<hr class="hr-vert" />
 		<div class="sections-menu">
 			<NuxtLink
@@ -18,6 +18,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+const viewport = useViewport();
 
 const offsets = [1, 2, 3, 4, 5];
 
@@ -41,7 +42,7 @@ onMounted(() => {
 		document.querySelectorAll('section').forEach(section => {
 			observer.observe(section);
 		});
-	}, 700);
+	}, 400);
 });
 </script>
 

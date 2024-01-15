@@ -1,7 +1,7 @@
 <template>
-	<section id="4" class="rates">
+	<section id="5" class="rates">
 		<div class="container-content">
-			<div class="rates-title" v-motion="visOnceBottom">
+			<div class="section-title" v-motion="visOnceBottom">
 				<div class="title">
 					<h2>Тарифы</h2>
 				</div>
@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import RatesSlider from '@/components/all/swiperSlider/RatesSlider';
+import RatesSlider from '@/components/universal/swiperSlider/RatesSlider';
 import visOnceBottom from '/assets/js/motions/visOnceBottom';
 
 const ratesSliderItems = ref([
@@ -79,15 +79,12 @@ const ratesSliderItems = ref([
 
 <style lang="scss">
 .rates {
+	max-width: 1920px;
+	margin: 0 auto;
 	position: relative;
-	background-image: url(https://weblinex.ru/images/rates/rt-bg.png);
-	background-repeat: no-repeat;
-	background-position: top -500px right 0px;
-	&-title {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	background: url(https://weblinex.ru/images/rates/rt-bg.png) no-repeat center
+		center fixed;
+	background-position: bottom -130px right 0px;
 	&-slider {
 		height: 650px;
 		margin: 50px 68px;

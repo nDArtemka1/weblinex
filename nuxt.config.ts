@@ -98,7 +98,7 @@ export default defineNuxtConfig({
 				},
 			],
 		},
-		// добавление анимации тега Transition
+		// // добавление анимации тега Transition
 		pageTransition: { name: 'page', mode: 'out-in' },
 	},
 });

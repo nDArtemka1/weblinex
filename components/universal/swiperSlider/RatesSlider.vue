@@ -197,13 +197,11 @@ const next = ref(null);
 	transition: all 0.3s ease;
 }
 
-.swiper-btn-prev:hover:before {
-	width: 60px;
-	height: 60px;
+.swiper-btn-prev:hover {
+	transform: scale(1.1);
 }
-.swiper-btn-next:hover:before {
-	width: 60px;
-	height: 60px;
+.swiper-btn-next:hover {
+	transform: scale(1.1);
 }
 
 .swiper-btn-prev {
