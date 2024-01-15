@@ -8,11 +8,12 @@
 				:class="{ selected: title == selectedTitle }"
 				@click="selectedTitle = title"
 			>
-				{{ title }} <span>{{ ++index }}</span>
+				<span class="tabs-header-li-number">{{ ++index }}</span>
 			</li>
 		</ul>
 		<div class="tabs-contents">
 			<hr class="hr-vert" />
+			<hr class="hr" />
 			<slot />
 		</div>
 	</div>
@@ -41,16 +42,35 @@ provide('selectedTitle', selectedTitle);
 	&-header {
 		margin-right: 30px;
 		&-li {
+			position: relative;
 			display: flex;
 			justify-content: space-between;
 			font-size: 20px;
-			line-height: 25px;
+			line-height: 35px;
 			letter-spacing: 1px;
 			font-weight: 600;
 			color: var(--transparentWhite60);
-			span {
+			cursor: pointer;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				background-color: var(--green);
+				top: 33px;
+				left: 0;
+				border-radius: 0 0 10px 10px;
+				transform-origin: right;
+				transform: scaleX(0);
+				transition: transform 0.3s ease-in-out;
+			}
+
+			&:hover::before {
+				transform-origin: left;
+				transform: scaleX(1);
+			}
+			&-number {
 				font-size: 24px;
-				margin-left: 50px;
 			}
 		}
 		&-li:not(:last-child) {
@@ -58,16 +78,171 @@ provide('selectedTitle', selectedTitle);
 		}
 		.selected {
 			color: var(--green);
+			.tabs-header-li-number {
+				width: 100%;
+				position: relative;
+				text-align: center;
+				&::before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					background-color: var(--green);
+					top: 33px;
+					left: 0;
+					border-radius: 0 0 10px 10px;
+					box-shadow: 0 0 20px var(--shadowGreen);
+				}
+			}
 		}
 	}
 	&-contents {
 		position: relative;
 		padding-left: 30px;
 		width: 60%;
+		color: var(--transparentWhite70);
+		.hr {
+			height: 2px;
+			margin-bottom: 20px;
+			display: none;
+		}
 		.hr-vert {
 			width: 2px;
 			height: 100%;
 			left: 0;
+		}
+	}
+}
+.tab-content {
+	&-top {
+		&-title {
+			font-size: max(20px, min(30px, var(--base-scale) * 5));
+			font-weight: 600;
+			text-align: center;
+			line-height: 35px;
+			letter-spacing: 1px;
+			color: var(--green);
+			margin-bottom: 30px;
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				background-color: var(--green);
+				top: 45px;
+				left: 0;
+				border-radius: 0 0 10px 10px;
+				box-shadow: 0 0 20px var(--shadowGreen);
+			}
+		}
+	}
+	&-bottom {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		margin-top: 20px;
+		ul {
+			li {
+				position: relative;
+				margin: 7px 0;
+				padding-left: 35px;
+
+				span:before {
+					position: absolute;
+					top: 5px;
+					left: 0;
+					color: var(--green);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1360px) {
+	.tabs {
+		&-contents {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 1260px) {
+	.tabs {
+		&-contents {
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: 1100px) {
+	.tabs {
+		&-contents {
+			width: 90%;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.tabs {
+		&-contents {
+			width: 100%;
+		}
+	}
+	.tab-content {
+		&-top {
+			&-title {
+				display: block;
+			}
+		}
+	}
+}
+
+@media (max-width: 769px) {
+	.tabs {
+		flex-direction: column;
+		&-header {
+			display: flex;
+			justify-content: center;
+			margin-right: 0;
+			&-li {
+				&-number {
+					font-size: max(20px, min(30px, var(--base-scale) * 5));
+				}
+			}
+			&-li:not(:last-child) {
+				margin-right: 30px;
+			}
+		}
+		&-contents {
+			padding-left: 0;
+			.hr {
+				display: block;
+			}
+			.hr-vert {
+				display: none;
+			}
+		}
+	}
+
+	.tab-content {
+		&-top {
+			&-title {
+				&::before {
+					display: none;
+				}
+				&-number {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 577px) {
+	.tab-content {
+		&-bottom {
+			grid-template-columns: repeat(1, 1fr);
+			grid-gap: 0;
 		}
 	}
 }
