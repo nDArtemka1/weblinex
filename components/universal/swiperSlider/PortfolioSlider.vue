@@ -81,14 +81,21 @@ const modules = [Pagination, Navigation];
 		}
 	}
 	.swiper-pagination-bullet {
-		width: 30px;
-		height: 5px;
-		border-radius: 20px;
-		background: var(--white);
-		opacity: 1;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border: 1px solid var(--green);
+		background: var(--black);
+		transition: all 0.4s ease;
+	}
+	.swiper-pagination-bullet:hover {
+		background: radial-gradient(#2eecc5, #00644f);
+	}
+	.swiper-pagination-bullet:not(:last-child) {
+		margin-right: 20px;
 	}
 	.swiper-pagination-bullet-active {
-		background: var(--green);
+		background: radial-gradient(#2eecc5, #00644f);
 	}
 	.swiper-pagination-fraction,
 	.swiper-pagination-custom,

@@ -36,7 +36,6 @@ provide('selectedTitle', selectedTitle);
 <style lang="scss">
 .tabs {
 	display: flex;
-	justify-content: space-between;
 	justify-content: center;
 	margin-top: 50px;
 	&-header {
@@ -51,6 +50,7 @@ provide('selectedTitle', selectedTitle);
 			font-weight: 600;
 			color: var(--transparentWhite60);
 			cursor: pointer;
+			transition: all 0.4s;
 			&::before {
 				content: '';
 				position: absolute;
@@ -72,6 +72,9 @@ provide('selectedTitle', selectedTitle);
 			&-number {
 				font-size: 24px;
 			}
+		}
+		&-li:hover {
+			color: var(--green);
 		}
 		&-li:not(:last-child) {
 			margin-bottom: 20px;

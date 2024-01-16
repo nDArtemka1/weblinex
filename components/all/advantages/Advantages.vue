@@ -1,8 +1,8 @@
 <template>
 	<section id="2" class="advantages">
 		<div class="container-content advantages-wrap">
-			<div class="advantages-title" v-motion="visOnceLeft">
-				<div class="title">
+			<div class="advantages-title">
+				<div class="title" v-motion="visOnceLeft">
 					<h2>
 						Причины сотрудничать <br />
 						с нами
@@ -20,7 +20,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="advantages-title-btn-mt">
+				<div class="advantages-title-btn-mt" v-motion="visOnceBottom">
 					<NuxtLink class="advantages-title-btn" to="#"
 						><span>Портфолио</span>
 						<div class="advantages-title-btn-wrapper">Портфолио</div></NuxtLink

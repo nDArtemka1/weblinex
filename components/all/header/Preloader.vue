@@ -261,4 +261,9 @@
 		transform: rotateY(1turn);
 	}
 }
+@media (max-width: 992px) {
+	.preloader {
+		display: none;
+	}
+}
 </style>
