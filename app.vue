@@ -5,10 +5,10 @@
 </template>
 
 <script setup>
-import gsap from 'gsap-trial';
-import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap-trial/ScrollToPlugin';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+// import gsap from 'gsap-trial';
+// import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+// import { ScrollToPlugin } from 'gsap-trial/ScrollToPlugin';
+// import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 </script>

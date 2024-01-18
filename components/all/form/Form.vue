@@ -60,13 +60,14 @@
 			</div>
 		</div>
 
-		<div class="input-box">
+		<div v-if="commentActive" class="input-box">
 			<label for="comment">Ваш комментарий ( по желанию )</label>
 			<input
 				id="comment"
 				type="text"
 				class="comment"
 				name="comment"
+				v-model.trim="state.comment"
 				autocomplete="Ваш комментарий ( по желанию )"
 			/>
 		</div>
@@ -137,7 +138,13 @@ import {
 
 export default {
 	setup() {
-		const state = reactive({ name: '', phone: '', email: '' });
+		const state = reactive({
+			name: '',
+			phone: '',
+			email: '',
+			comment: '',
+			budget: '',
+		});
 
 		const alpha = helpers.regex(/^[а-яА-Яa-zA-Z]*$/);
 
@@ -177,6 +184,12 @@ export default {
 		return { state, v$ };
 	},
 	props: {
+		commentActive: {
+			type: Boolean,
+			default() {
+				return true;
+			},
+		},
 		budgetActive: {
 			type: Boolean,
 			default() {
@@ -203,6 +216,8 @@ export default {
 						name: this.state.name,
 						phone: this.state.phone,
 						email: this.state.email,
+						comment: this.state.comment,
+						budget: this.state.budget,
 					})
 					.then(response => {
 						return (this.response = true);
@@ -335,7 +350,7 @@ form {
 		color: var(--black);
 	}
 	input.error {
-		border-bottom-color: var(--red);
+		border: 2px solid var(--red);
 	}
 }
 

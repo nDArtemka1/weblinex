@@ -23,7 +23,7 @@ const viewport = useViewport();
 .header {
 	width: 100%;
 	height: 100%;
-	background-image: url('https://weblinex.ru/images/header/header-bg.png');
+	background-image: url('https://weblinex.ru/images/header/header-bg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
@@ -38,7 +38,7 @@ const viewport = useViewport();
 			display: flex;
 			align-items: center;
 			justify-content: flex-start;
-			background-image: url('https://weblinex.ru/images/header/developer.png');
+			background-image: url('https://weblinex.ru/images/header/developer.webp');
 			background-repeat: no-repeat;
 			background-position: bottom -30px right 0px;
 			background-size: clamp(400px, 100%, 600px);
@@ -180,6 +180,7 @@ const viewport = useViewport();
 
 @media (max-width: 577px) {
 	.header {
+		background-image: url('https://weblinex.ru/images/header/header-bg-mob.webp');
 		&-intro {
 			&-wrap {
 				background-image: none;

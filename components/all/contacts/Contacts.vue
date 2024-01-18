@@ -11,7 +11,12 @@
 			</div>
 
 			<div class="contacts-wrap-right">
-				<nuxt-img src="/contacts/phone.png" alt="phone" />
+				<nuxt-img
+					width="415"
+					height="815"
+					src="/contacts/phone.webp"
+					alt="phone"
+				/>
 			</div>
 		</div>
 	</section>

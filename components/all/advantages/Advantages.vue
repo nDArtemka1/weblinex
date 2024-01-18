@@ -1,8 +1,34 @@
 <template>
 	<section id="2" class="advantages">
 		<div class="container-content advantages-wrap">
-			<div class="advantages-title">
-				<div class="title" v-motion="visOnceLeft">
+			<div class="advantages-title" v-if="viewport.isGreaterThan('tablet')">
+				<div class="title">
+					<h2 v-motion="visOnceLeft">
+						Причины сотрудничать <br />
+						с нами
+					</h2>
+					<div class="title-info">
+						<p v-motion="visOnceLeft">
+							Пока конкуренты говорят о том, что они лучшие - мы это доказываем
+							<br />
+							делом.
+						</p>
+						<p v-motion="visOnceLeft">
+							Вы можете ознакомиться с информацией о нас и посмотреть наше
+							<br />
+							портфолио
+						</p>
+					</div>
+				</div>
+				<div class="advantages-title-btn-mt" v-motion="visOnceBottom">
+					<NuxtLink class="advantages-title-btn" to="#"
+						><span>Портфолио</span>
+						<div class="advantages-title-btn-wrapper">Портфолио</div></NuxtLink
+					>
+				</div>
+			</div>
+			<div class="advantages-title" v-if="viewport.isLessThan('tablet')">
+				<div class="title">
 					<h2>
 						Причины сотрудничать <br />
 						с нами
@@ -20,7 +46,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="advantages-title-btn-mt" v-motion="visOnceBottom">
+				<div class="advantages-title-btn-mt">
 					<NuxtLink class="advantages-title-btn" to="#"
 						><span>Портфолио</span>
 						<div class="advantages-title-btn-wrapper">Портфолио</div></NuxtLink
@@ -197,8 +223,8 @@ const advantagesItems = ref([
 	max-width: 1920px;
 	margin: 0 auto;
 	position: relative;
-	background: url(https://weblinex.ru/images/advantages/adv-bg.png) no-repeat
-		center center fixed;
+	background: url(https://weblinex.ru/images/advantages/adv-bg.webp) no-repeat
+		center center;
 	background-position: bottom -75px right 0px;
 
 	&-wrap {
@@ -352,6 +378,7 @@ const advantagesItems = ref([
 }
 @media (max-width: 577px) {
 	.advantages {
+		background: none;
 		&-items {
 			grid-template-columns: repeat(1, 1fr);
 		}

@@ -1,5 +1,5 @@
 <template>
-	<nav class="nav-fix d-none d-lg-block" :class="{ hidden: !showNavbar }">
+	<nav class="nav-fix" :class="{ hidden: !showNavbar }">
 		<div class="container nav">
 			<NavLogo />
 			<NavList :active="active" :navList="navList" :navItem="navItem" />
@@ -83,6 +83,14 @@ export default {
 	&-fix.hidden {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
+	}
+}
+
+@media (max-width: 992px) {
+	.nav {
+		&-fix {
+			display: none;
+		}
 	}
 }
 </style>

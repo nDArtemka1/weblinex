@@ -104,4 +104,12 @@ const modules = [Pagination, Navigation];
 		bottom: var(--swiper-pagination-bottom, -60px);
 	}
 }
+
+@media (max-width: 577px) {
+	.portfolio-slider {
+		.swiper-pagination-bullet:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+}
 </style>

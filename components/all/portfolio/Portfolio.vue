@@ -36,35 +36,35 @@ const textBtn = ref('Смотреть все проекты');
 const linkBtn = ref('#');
 
 const portfolioSliderItems = ref([
-	{ id: 1, path: '/portfolio/1.png', alt: '1', overlay: true },
+	{ id: 1, path: '/portfolio/1.webp', alt: '1', overlay: true },
 	{
 		id: 2,
-		path: '/portfolio/2.png',
+		path: '/portfolio/2.webp',
 		alt: '2',
 		overlay: true,
 	},
-	{ id: 3, path: '/portfolio/3.png', alt: '3', overlay: true },
+	{ id: 3, path: '/portfolio/3.webp', alt: '3', overlay: true },
 	{
 		id: 4,
-		path: '/portfolio/4.png',
+		path: '/portfolio/4.webp',
 		alt: '4',
 		overlay: true,
 	},
 	{
 		id: 5,
-		path: '/portfolio/5.png',
+		path: '/portfolio/5.webp',
 		alt: '5',
 		overlay: true,
 	},
 	{
 		id: 6,
-		path: '/portfolio/6.png',
+		path: '/portfolio/6.webp',
 		alt: '6',
 		overlay: true,
 	},
 	{
 		id: 7,
-		path: '/portfolio/7.png',
+		path: '/portfolio/7.webp',
 		alt: '7',
 		overlay: true,
 	},

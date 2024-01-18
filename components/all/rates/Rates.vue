@@ -82,8 +82,8 @@ const ratesSliderItems = ref([
 	max-width: 1920px;
 	margin: 0 auto;
 	position: relative;
-	background: url(https://weblinex.ru/images/rates/rt-bg.png) no-repeat center
-		center fixed;
+	background: url(https://weblinex.ru/images/rates/rt-bg.webp) no-repeat center
+		center;
 	background-position: bottom -130px right 0px;
 	object-fit: cover;
 	&-slider {
@@ -110,6 +110,11 @@ const ratesSliderItems = ref([
 		&-slider {
 			height: 700px;
 		}
+	}
+}
+@media (max-width: 577px) {
+	.rates {
+		background: none;
 	}
 }
 </style>

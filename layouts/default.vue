@@ -22,9 +22,9 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import gsap from 'gsap-trial';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
-import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+// import gsap from 'gsap-trial';
+// import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+// import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
 
 import NavBarFix from '@/components/all/nav/NavBarFix';
 import SectionMenu from '@/components/all/sectionMenu/SectionMenu';
@@ -36,23 +36,23 @@ import Form from '@/components/all/form/Form';
 import Modal from '@/components/universal/modal/Modal';
 
 const main = ref();
-let ctx;
-let smoother;
+// let ctx;
+// let smoother;
 
-onMounted(() => {
-	ctx = gsap.context(() => {
-		// create the smooth scroller FIRST!
-		if (ScrollTrigger.isTouch !== 1) {
-			smoother = ScrollSmoother.create({
-				wrapper: '.wrapper',
-				content: '.content',
-				smooth: 1.5,
-				effects: true,
-			});
-		}
-	}, main.value);
-});
-onUnmounted(() => {
-	ctx.revert();
-});
+// onMounted(() => {
+// 	ctx = gsap.context(() => {
+// 		// create the smooth scroller FIRST!
+// 		if (ScrollTrigger.isTouch !== 1) {
+// 			smoother = ScrollSmoother.create({
+// 				wrapper: '.wrapper',
+// 				content: '.content',
+// 				smooth: 1.5,
+// 				effects: true,
+// 			});
+// 		}
+// 	}, main.value);
+// });
+// onUnmounted(() => {
+// 	ctx.revert();
+// });
 </script>

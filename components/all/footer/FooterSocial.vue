@@ -6,7 +6,13 @@
 			:key="index"
 			:to="item.href"
 		>
-			<nuxt-img :src="item.path" :alt="item.alt" />
+			<nuxt-img
+				sizes="28px md:28px"
+				width="28"
+				height="28"
+				:src="item.path"
+				:alt="item.alt"
+			/>
 		</NuxtLink>
 	</div>
 </template>
@@ -15,17 +21,17 @@
 import { ref } from 'vue';
 
 const footerSocialItems = ref([
-	{ id: 1, path: '/footer/icons/vk.png', alt: 'vk', href: '#' },
+	{ id: 1, path: '/footer/icons/vk.webp', alt: 'vk', href: '#' },
 	{
 		id: 2,
-		path: '/footer/icons/gmail.png',
+		path: '/footer/icons/gmail.webp',
 		alt: 'gmail',
 		href: '#',
 	},
-	{ id: 3, path: '/footer/icons/telegram.png', alt: 'telegram', href: '#' },
+	{ id: 3, path: '/footer/icons/telegram.webp', alt: 'telegram', href: '#' },
 	{
 		id: 4,
-		path: '/footer/icons/whatsapp.png',
+		path: '/footer/icons/whatsapp.webp',
 		alt: 'whatsapp',
 		href: '#',
 	},

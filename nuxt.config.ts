@@ -28,7 +28,6 @@ export default defineNuxtConfig({
 			mobile: 'mobile',
 			tablet: 'tablet',
 		},
-
 		fallbackBreakpoint: 'desktop',
 	},
 	components: [
@@ -37,7 +36,9 @@ export default defineNuxtConfig({
 		},
 	],
 	css: [
-		'~/assets/css/bootstrap.css',
+		//'~/assets/css/bootstrap.css',
+		'~/assets/css/bootstrap1.css',
+		'~/assets/scss/icons/font-awesome.scss',
 		'~/assets/scss/main.scss',
 		'~/assets/scss/reset.scss',
 	],
@@ -54,14 +55,20 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			title:
-				'Создание и продвижение сайтов в Йошкар-Оле | Заказать сайт под ключ » Создание и продвижение сайтов в Йошкар-Оле | Заказать сайт под ключ',
+				'Создание и продвижение сайтов по всей России | WebLinex |  Заказать сайт под ключ | ВебЛайнекс | Разработка лендингов, сайт визитки, интернет магазинов и тд...',
+
 			htmlAttrs: {
 				lang: 'ru',
 			},
 			meta: [
 				{ charset: 'utf-8' },
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-				{ hid: 'description', name: 'description', content: '' },
+				{
+					hid: 'description',
+					name: 'description',
+					content:
+						'Сайты от веб-студии «ВебЛайнекс» — Создание и продвижение сайтов по всей России с индивидуальным дизайном и гарантией продаж товаров и услуг через интернет. Разработка Landing page, сайт визитки, интернет магазина и тд...',
+				},
 				{ name: 'format-detection', content: 'telephone=no' },
 			],
 			link: [
@@ -77,16 +84,10 @@ export default defineNuxtConfig({
 					href: 'https://fonts.googleapis.com/css2?family=Kanit:wght@700;900&display=swap',
 				},
 				{
-					rel: 'stylesheet',
+					rel: 'preload',
 					href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0',
-				},
-				{
-					rel: 'stylesheet',
-					href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
-					integrity:
-						'sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==',
-					crossorigin: 'anonymous',
-					referrerpolicy: 'no-referrer',
+					onload: "this.rel='stylesheet'",
+					as: 'style',
 				},
 			],
 			script: [
@@ -95,6 +96,7 @@ export default defineNuxtConfig({
 					integrity:
 						'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL',
 					crossorigin: 'anonymous',
+					defer: 'true',
 				},
 			],
 		},

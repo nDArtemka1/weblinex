@@ -42,7 +42,7 @@ import FooterSocial from '@/components/all/footer/FooterSocial';
 .footer {
 	width: 100%;
 	height: 100%;
-	background-image: url('https://weblinex.ru/images/header/header-bg.png');
+	background-image: url('https://weblinex.ru/images/header/header-bg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: right 35% bottom 45%;

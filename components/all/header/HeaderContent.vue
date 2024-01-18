@@ -1,5 +1,5 @@
 <template>
-	<div class="header-content" v-motion="entSlideLeft">
+	<div class="header-content">
 		<div class="header-info">
 			<div class="header-info-border">
 				<div class="header-title-shadow">
