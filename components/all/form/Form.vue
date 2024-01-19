@@ -377,13 +377,5 @@ form {
 	}
 }
 
-// @media (max-width: 300px) {
-// 	.input-box-chekbox {
-// 		display: grid;
-// 		grid-template-columns: repeat(5, 1fr);
-// 		label {
-// 			grid-column: 2 / span 5;
-// 		}
-// 	}
-// }
+
 </style>
