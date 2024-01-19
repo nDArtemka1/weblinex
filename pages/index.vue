@@ -1,5 +1,5 @@
 <template>
-	<div class="main">
+	<div class="index">
 		<Header />
 		<hr class="hr" />
 		<main>

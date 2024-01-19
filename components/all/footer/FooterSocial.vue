@@ -7,6 +7,7 @@
 			:to="item.href"
 		>
 			<nuxt-img
+				loading="lazy"
 				sizes="28px md:28px"
 				width="28"
 				height="28"

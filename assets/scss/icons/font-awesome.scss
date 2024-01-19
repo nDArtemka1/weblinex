@@ -15,6 +15,9 @@
 .fa-check:before {
 	content: '\f00c';
 }
+.fa-chevron-right::before {
+	content: '\f054';
+}
 .sr-only {
 	border: 0;
 	clip: rect(0, 0, 0, 0);

@@ -14,7 +14,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div
-					class="offcanvas offcanvas-end text-bg-dark"
+					class="offcanvas offcanvas-end"
 					tabindex="-1"
 					id="offcanvasDarkNavbar"
 					aria-labelledby="offcanvasDarkNavbarLabel"
@@ -28,7 +28,7 @@
 						/>
 						<button
 							type="button"
-							class="btn-close btn-close-white"
+							class="btn-close"
 							data-bs-dismiss="offcanvas"
 							aria-label="Close"
 						></button>

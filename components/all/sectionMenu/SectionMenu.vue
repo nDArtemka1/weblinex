@@ -202,4 +202,10 @@ onMounted(() => {
 		left: -46px;
 	}
 }
+
+@media (max-width: 992px) {
+	.sections-menus {
+		display: none;
+	}
+}
 </style>

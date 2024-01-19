@@ -246,6 +246,7 @@ import FooterSocial from '@/components/all/footer/FooterSocial';
 
 @media (max-width: 577px) {
 	.footer {
+		background-image: url(https://weblinex.ru/images/header/header-bg-mob.webp);
 		&-info {
 			&-title {
 				text-align: center;

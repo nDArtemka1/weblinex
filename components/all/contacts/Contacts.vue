@@ -14,6 +14,8 @@
 				<nuxt-img
 					width="415"
 					height="815"
+					loading="lazy"
+					sizes="415px md:415px"
 					src="/contacts/phone.webp"
 					alt="phone"
 				/>
@@ -88,6 +90,7 @@ import Form from '@/components/all/form/Form';
 			grid-column: 5 / span 2;
 			right: -30px;
 			bottom: 0;
+			display: flex;
 		}
 	}
 }

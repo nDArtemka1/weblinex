@@ -63,7 +63,7 @@
 					<div
 						class="advantages-item-img"
 						:style="{
-							backgroundImage: `url('/images/advantages/money.png')`,
+							backgroundImage: `url('/images/advantages/money.webp')`,
 						}"
 					></div>
 				</div>
@@ -184,7 +184,7 @@ const advantagesItems = ref([
 		title: 'Приемлимые цены',
 		description:
 			' Мы максимально оптимизируем наш труд, для того, чтобы цены были доступными. ',
-		imgPath: 'money.png',
+		imgPath: 'money.webp',
 		imgAlt: 'money',
 		tabletDelay: 200,
 	},
@@ -193,7 +193,7 @@ const advantagesItems = ref([
 		title: 'В сроки сдаем работу!',
 		description:
 			'Расписываем каждый этап по срокам, и придерживаемся дедлайнов.',
-		imgPath: 'watch.png',
+		imgPath: 'watch.webp',
 		imgAlt: 'watch',
 		tabletDelay: 400,
 	},
@@ -202,7 +202,7 @@ const advantagesItems = ref([
 		title: 'Команда специалистов',
 		description:
 			'В нашей команде множество специалистов, и каждый из них хорошо знает свое дело.',
-		imgPath: 'comand.png',
+		imgPath: 'comand.webp',
 		imgAlt: 'comand',
 		tabletDelay: 200,
 	},
@@ -211,7 +211,7 @@ const advantagesItems = ref([
 		title: 'Консультация перед заказом',
 		description:
 			'Наши менеджеры готовы помочь вам, а так же ответить на ваши вопросы.',
-		imgPath: 'support.png',
+		imgPath: 'support.webp',
 		imgAlt: 'support',
 		tabletDelay: 400,
 	},

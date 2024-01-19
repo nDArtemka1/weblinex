@@ -24,7 +24,7 @@
 			v-for="(slide, index) in sliderItems"
 			:key="index"
 		>
-			<nuxt-img :src="slide.path" :alt="slide.alt" />
+			<nuxt-img loading="lazy" :src="slide.path" :alt="slide.alt" />
 			<div v-if="slide.overlay" class="overlay">
 				<div class="overlay-btn">
 					<span class="underline">Подробнее</span>
@@ -82,8 +82,8 @@ const modules = [Pagination, Navigation];
 	}
 	.swiper-pagination-bullet {
 		position: relative;
-		width: 20px;
-		height: 20px;
+		width: 17.5px;
+		height: 17.5px;
 		border: 1px solid var(--green);
 		background: var(--black);
 		transition: all 0.4s ease;

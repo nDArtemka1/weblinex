@@ -25,9 +25,7 @@
 			>
 				<div class="arrow-btn-a">
 					<span>Подробнее</span>
-					<span class="material-symbols-outlined chevron-right">
-						chevron_right
-					</span>
+					<span class="fa fa-chevron-right chevron-right"></span>
 				</div>
 			</div>
 

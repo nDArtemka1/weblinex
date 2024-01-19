@@ -47,11 +47,11 @@ const popupTitle = usePopupTitle();
 			background-clip: text;
 			background-size: 600vw 600vw;
 			color: transparent;
-			font-size: 33px;
+			font-size: 28px;
 			font-weight: 600;
 			height: 40px;
 			margin-bottom: -40px;
-			margin-left: 25px;
+			margin-left: 10px;
 			text-shadow: 0 0 20px var(--shadowGreen);
 			-webkit-user-select: none;
 			-moz-user-select: none;
@@ -71,8 +71,35 @@ const popupTitle = usePopupTitle();
 }
 
 @media (max-width: 577px) {
-	.modal-header-title {
-		font-size: max(22px, min(50px, var(--base-scale) * 5));
+	.modal {
+		&-header-title {
+			font-size: max(22px, min(28px, var(--base-scale) * 5));
+		}
+		&-body {
+			.form {
+				.comment-mob {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 426px) {
+	.modal {
+		&-body {
+			padding: 15px 20px;
+		}
+	}
+}
+@media (max-width: 280px) {
+	.modal {
+		&-header {
+			&-title {
+				height: 60px;
+				margin-bottom: -70px;
+			}
+		}
 	}
 }
 </style>

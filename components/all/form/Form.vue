@@ -60,7 +60,7 @@
 			</div>
 		</div>
 
-		<div v-if="commentActive" class="input-box">
+		<div v-if="commentActive" class="input-box comment-mob">
 			<label for="comment">Ваш комментарий ( по желанию )</label>
 			<input
 				id="comment"
@@ -99,6 +99,7 @@
 				id="flexCheckChecked"
 				checked
 			/>
+
 			<label for="flexCheckChecked"
 				>Согласие на обработку
 				<NuxtLink to="#" target="_blank"
@@ -114,6 +115,7 @@
 			</div>
 
 			<div v-if="response" class="status-p">
+				<span class="fa fa-check" aria-hidden="true"></span>
 				Заявка успешно отправлена.<br /><br />
 				Наши специалисты свяжутся с вами в ближайшее время!
 			</div>
@@ -256,7 +258,14 @@ export default {
 	flex-direction: column;
 	width: 100%;
 	margin-top: 50px;
+	.form-check-input {
+		background-color: var(--green);
+	}
+	.form-check-input:checked {
+		border-color: var(--boxShadowGreen);
+	}
 }
+
 .input-box {
 	display: flex;
 	flex-direction: column;
@@ -317,8 +326,9 @@ export default {
 .input-box-chekbox {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 15px 0;
-	flex-wrap: wrap;
+	text-align: center;
 	input {
 		margin-right: 20px;
 	}
@@ -358,13 +368,22 @@ form {
 	display: flex;
 	justify-content: center;
 	&-p {
+		text-align: center;
 		margin-top: 20px;
+		.fa-check {
+			color: var(--green);
+			margin-right: 15px;
+		}
 	}
 }
 
-@media (max-width: 395px) {
-	.input-box-chekbox {
-		align-items: center;
-	}
-}
+// @media (max-width: 300px) {
+// 	.input-box-chekbox {
+// 		display: grid;
+// 		grid-template-columns: repeat(5, 1fr);
+// 		label {
+// 			grid-column: 2 / span 5;
+// 		}
+// 	}
+// }
 </style>

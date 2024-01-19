@@ -116,6 +116,9 @@ const viewport = useViewport();
 		&-qw:hover {
 			color: var(--lightGray);
 		}
+		.chevron-right {
+			margin-top: 2px;
+		}
 	}
 }
 
