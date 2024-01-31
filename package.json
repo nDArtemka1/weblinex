@@ -1,35 +1,35 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "predeploy": "npm run generate",
-    "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.0.0-rc.1",
-    "@types/node": "^18.17.3",
-    "gh-pages": "^6.0.0",
-    "nuxt": "^3.6.5",
-    "nuxt-viewport": "^2.0.6",
-    "sass": "^1.64.2",
-    "sass-loader": "^13.3.2"
-  },
-  "dependencies": {
-    "@vuelidate/core": "^2.0.3",
-    "@vuelidate/validators": "^2.0.3",
-    "@vueuse/motion": "^2.0.0",
-    "axios": "^1.4.0",
-    "bootstrap": "^5.3.2",
-    "gsap-trial": "^3.12.2",
-    "nuxt-ssr-cache": "^1.5.2",
-    "primevue": "^3.32.1",
-    "swiper": "^10.1.0",
-    "vuex": "^4.0.2"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"predeploy": "npm run generate",
+		"deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "latest",
+		"@nuxt/image": "^1.0.0-rc.1",
+		"@types/node": "^18.17.3",
+		"gh-pages": "^6.0.0",
+		"nuxt": "^3.6.5",
+		"nuxt-primevue": "^0.2.2",
+		"nuxt-viewport": "^2.0.6",
+		"sass": "^1.64.2",
+		"sass-loader": "^13.3.2"
+	},
+	"dependencies": {
+		"@splidejs/vue-splide": "^0.6.12",
+		"@vuelidate/core": "^2.0.3",
+		"@vuelidate/validators": "^2.0.3",
+		"axios": "^1.4.0",
+		"bootstrap": "^5.3.2",
+		"nuxt-ssr-cache": "^1.5.2",
+		"primeicons": "^6.0.1",
+		"primevue": "^3.32.1",
+		"swiper": "^10.1.0"
+	}
 }

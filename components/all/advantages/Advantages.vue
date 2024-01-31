@@ -3,24 +3,47 @@
 		<div class="container-content advantages-wrap">
 			<div class="advantages-title" v-if="viewport.isGreaterThan('tablet')">
 				<div class="title">
-					<h2 v-motion="visOnceLeft">
+					<h2
+						class="fadeoutleft"
+						v-animateonscroll="{
+							enterClass: 'fadeinleft',
+						}"
+					>
 						Причины сотрудничать <br />
 						с нами
 					</h2>
 					<div class="title-info">
-						<p v-motion="visOnceLeft">
+						<p
+							class="fadeoutleft"
+							v-animateonscroll="{
+								enterClass: 'fadeinleft',
+							}"
+							:style="{ transitionDelay: '100ms' }"
+						>
 							Пока конкуренты говорят о том, что они лучшие - мы это доказываем
 							<br />
 							делом.
 						</p>
-						<p v-motion="visOnceLeft">
+						<p
+							class="fadeoutleft"
+							v-animateonscroll="{
+								enterClass: 'fadeinleft',
+							}"
+							:style="{ transitionDelay: '200ms' }"
+						>
 							Вы можете ознакомиться с информацией о нас и посмотреть наше
 							<br />
 							портфолио
 						</p>
 					</div>
 				</div>
-				<div class="advantages-title-btn-mt" v-motion="visOnceBottom">
+				<div
+					class="advantages-title-btn-mt fadeoutbottom"
+					v-animateonscroll="{
+						enterClass: 'fadeinbottom',
+					}"
+					:style="{ transitionDelay: '200ms' }"
+				>
 					<NuxtLink class="advantages-title-btn" to="#"
 						><span>Портфолио</span>
 						<div class="advantages-title-btn-wrapper">Портфолио</div></NuxtLink
@@ -29,31 +52,60 @@
 			</div>
 			<div class="advantages-title" v-if="viewport.isLessThan('tablet')">
 				<div class="title">
-					<h2>
+					<h2
+						class="fadeoutbottom"
+						v-animateonscroll="{
+							enterClass: 'fadeinbottom',
+						}"
+					>
 						Причины сотрудничать <br />
 						с нами
 					</h2>
 					<div class="title-info">
-						<p>
+						<p
+							class="fadeoutbottom"
+							v-animateonscroll="{
+								enterClass: 'fadeinbottom',
+							}"
+							:style="{ transitionDelay: '100ms' }"
+						>
 							Пока конкуренты говорят о том, что они лучшие - мы это доказываем
 							<br />
 							делом.
 						</p>
-						<p>
+						<p
+							class="fadeoutbottom"
+							v-animateonscroll="{
+								enterClass: 'fadeinbottom',
+							}"
+							:style="{ transitionDelay: '200ms' }"
+						>
 							Вы можете ознакомиться с информацией о нас и посмотреть наше
 							<br />
 							портфолио
 						</p>
 					</div>
 				</div>
-				<div class="advantages-title-btn-mt">
+				<div
+					class="advantages-title-btn-mt fadeoutbottom"
+					v-animateonscroll="{
+						enterClass: 'fadeinbottom',
+					}"
+					:style="{ transitionDelay: '300ms' }"
+				>
 					<NuxtLink class="advantages-title-btn" to="#"
 						><span>Портфолио</span>
 						<div class="advantages-title-btn-wrapper">Портфолио</div></NuxtLink
 					>
 				</div>
 			</div>
-			<div class="advantages-item-main" v-motion="visOnceRight">
+			<div
+				class="advantages-item-main fadeoutright"
+				v-animateonscroll="{
+					enterClass: 'fadeinright',
+				}"
+				:style="{ transitionDelay: '50ms' }"
+			>
 				<div class="advantages-item">
 					<div class="advantages-item-title">Приемлимые цены</div>
 					<div class="advantages-item-description">
@@ -71,23 +123,13 @@
 
 			<div class="advantages-items" v-if="viewport.isGreaterThan('tablet')">
 				<div
-					class="advantages-item"
+					class="advantages-item fadeoutbottom"
 					v-for="(item, index) in advantagesItems"
 					:key="index"
-					v-motion
-					:initial="{
-						opacity: 0,
-						y: 100,
+					v-animateonscroll="{
+						enterClass: 'fadeinbottom',
 					}"
-					:visibleOnce="{
-						opacity: 1,
-						y: 0,
-						transition: {
-							type: 'damping',
-							damping: 15,
-						},
-					}"
-					:delay="++index * 200"
+					:style="{ transitionDelay: index * 200 + 'ms' }"
 				>
 					<div class="advantages-item-title">{{ item.title }}</div>
 					<div class="advantages-item-description">
@@ -106,23 +148,13 @@
 				v-if="viewport.matches('tablet', 'mobileWide')"
 			>
 				<div
-					class="advantages-item"
+					class="advantages-item fadeoutbottom"
 					v-for="(item, index) in advantagesItems"
 					:key="index"
-					v-motion
-					:initial="{
-						opacity: 0,
-						y: 100,
+					v-animateonscroll="{
+						enterClass: 'fadeinbottom',
 					}"
-					:visibleOnce="{
-						opacity: 1,
-						y: 0,
-						transition: {
-							type: 'damping',
-							damping: 15,
-						},
-					}"
-					:delay="item.tabletDelay"
+					:style="{ transitionDelay: item.tabletDelay + 'ms' }"
 				>
 					<div class="advantages-item-title">{{ item.title }}</div>
 					<div class="advantages-item-description">
@@ -138,22 +170,13 @@
 			</div>
 			<div class="advantages-items" v-if="viewport.isLessThan('mobileWide')">
 				<div
-					class="advantages-item"
+					class="advantages-item fadeoutbottom"
 					v-for="(item, index) in advantagesItems"
 					:key="index"
-					v-motion
-					:initial="{
-						opacity: 0,
-						y: 100,
+					v-animateonscroll="{
+						enterClass: 'fadeinbottom',
 					}"
-					:visibleOnce="{
-						opacity: 1,
-						y: 0,
-						transition: {
-							type: 'damping',
-							damping: 15,
-						},
-					}"
+					:style="{ transitionDelay: '50ms' }"
 				>
 					<div class="advantages-item-title">{{ item.title }}</div>
 					<div class="advantages-item-description">
@@ -173,9 +196,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import visOnceLeft from '/assets/js/motions/visOnceLeft';
-import visOnceRight from '/assets/js/motions/visOnceRight';
-import visOnceBottom from '/assets/js/motions/visOnceBottom';
 const viewport = useViewport();
 
 const advantagesItems = ref([
@@ -186,7 +206,7 @@ const advantagesItems = ref([
 			' Мы максимально оптимизируем наш труд, для того, чтобы цены были доступными. ',
 		imgPath: 'money.webp',
 		imgAlt: 'money',
-		tabletDelay: 200,
+		tabletDelay: 100,
 	},
 	{
 		id: 2,
@@ -195,7 +215,7 @@ const advantagesItems = ref([
 			'Расписываем каждый этап по срокам, и придерживаемся дедлайнов.',
 		imgPath: 'watch.webp',
 		imgAlt: 'watch',
-		tabletDelay: 400,
+		tabletDelay: 300,
 	},
 	{
 		id: 3,
@@ -204,7 +224,7 @@ const advantagesItems = ref([
 			'В нашей команде множество специалистов, и каждый из них хорошо знает свое дело.',
 		imgPath: 'comand.webp',
 		imgAlt: 'comand',
-		tabletDelay: 200,
+		tabletDelay: 100,
 	},
 	{
 		id: 4,
@@ -213,7 +233,7 @@ const advantagesItems = ref([
 			'Наши менеджеры готовы помочь вам, а так же ответить на ваши вопросы.',
 		imgPath: 'support.webp',
 		imgAlt: 'support',
-		tabletDelay: 400,
+		tabletDelay: 300,
 	},
 ]);
 </script>
@@ -326,7 +346,6 @@ const advantagesItems = ref([
 	}
 	&-item:first-child {
 		background: linear-gradient(to bottom right, #527791, #325597, #193895);
-		transform: translate(0px, 0px);
 		display: none;
 	}
 	&-item {
@@ -371,8 +390,8 @@ const advantagesItems = ref([
 		}
 		&-item:first-child {
 			background: linear-gradient(to bottom right, #527791, #325597, #193895);
-			transform: translate(0px, 0px);
-			display: block;
+
+			display: flex;
 		}
 	}
 }

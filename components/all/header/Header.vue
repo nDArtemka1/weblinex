@@ -16,6 +16,7 @@
 <script setup>
 import HeaderContent from '@/components/all/header/HeaderContent';
 import Preloader from '@/components/all/header/Preloader';
+
 const viewport = useViewport();
 </script>
 
@@ -29,6 +30,29 @@ const viewport = useViewport();
 	position: relative;
 	margin-top: -115px;
 	overflow: hidden;
+	&-other {
+		background-image: url(https://weblinex.ru/images/header/header-bg.webp);
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		margin-top: -115px;
+		overflow: hidden;
+		.header-intro {
+			height: 100%;
+		}
+		.header-content {
+			margin-top: 200px;
+			grid-template-columns: repeat(6, 1fr);
+			margin-bottom: 50px;
+		}
+		.header-info {
+			grid-column: 1 / span 6;
+			margin-right: 0;
+		}
+		.header-promo {
+			font-size: 20px;
+		}
+	}
 	&-intro {
 		height: 100vh;
 		max-height: 958px;
@@ -107,6 +131,11 @@ const viewport = useViewport();
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		.arrow-btn-a {
+			svg {
+				stroke: var(--white);
+			}
+		}
 		&-qw {
 			margin-left: 25px;
 			color: var(--darkGray);
@@ -116,8 +145,53 @@ const viewport = useViewport();
 		&-qw:hover {
 			color: var(--lightGray);
 		}
-		.chevron-right {
-			margin-top: 2px;
+	}
+	&-form {
+		display: flex;
+		&-title {
+			font-size: max(17px, min(23px, var(--base-scale) * 5));
+			line-height: 35px;
+			letter-spacing: 1px;
+			color: var(--lightGray);
+			margin: 30px 0;
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+		.form {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			margin-top: 30px;
+			.input-box:not(:last-child) {
+				margin-right: 20px;
+			}
+			.input-box-chekbox {
+				grid-column: 1 / span 3;
+			}
+		}
+	}
+}
+
+@media (max-width: 1320px) {
+	.header {
+		&-other {
+			.header-content {
+				margin-top: 170px;
+			}
+			.header-intro {
+				height: 100%;
+			}
+		}
+		&-form {
+			.form {
+				grid-template-columns: repeat(2, 1fr);
+				.input-box:nth-child(3) {
+					grid-column: 1 / span 2;
+				}
+				.input-box-chekbox {
+					grid-column: 1 / span 2;
+				}
+			}
 		}
 	}
 }
@@ -125,6 +199,11 @@ const viewport = useViewport();
 @media (max-width: 992px) {
 	.header {
 		margin-top: 0;
+		&-other {
+			.header-content {
+				margin-top: 100px;
+			}
+		}
 		&-title {
 			font-size: max(30px, min(55px, calc(var(--base-scale) * 5)));
 			span {
@@ -156,9 +235,22 @@ const viewport = useViewport();
 }
 
 @media (max-width: 862px) {
-	.header-intro-wrap {
-		background-position: bottom -30px right -135px;
-		background-size: clamp(300px, 100%, 450px);
+	.header {
+		&-intro-wrap {
+			background-position: bottom -30px right -135px;
+			background-size: clamp(300px, 100%, 450px);
+		}
+		&-form {
+			.form {
+				grid-template-columns: repeat(1, 1fr);
+				.input-box:nth-child(3) {
+					grid-column: 1 / span 1;
+				}
+				.input-box-chekbox {
+					grid-column: 1 / span 1;
+				}
+			}
+		}
 	}
 }
 
@@ -170,13 +262,22 @@ const viewport = useViewport();
 				font-size: max(20px, min(35px, calc(var(--base-scale) * 5)));
 			}
 		}
+		&-form {
+			flex-direction: column;
+			&-title {
+				text-align: center;
+			}
+			.form {
+				margin-top: 0;
+			}
+		}
 	}
 }
 
 @media (max-width: 612px) {
 	.header {
 		&-info {
-			margin-top: 170px;
+			margin-top: 120px;
 		}
 	}
 }

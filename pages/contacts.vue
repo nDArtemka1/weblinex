@@ -1,10 +1,9 @@
 <template>
-	<div class="portfolio">
+	<div class="uslugi">
 		<Header />
 		<hr class="hr" />
 		<main>
-			Портфолио
-			<Portfolio />
+			Контакты
 			<StagesWorks />
 			<Rates />
 		</main>

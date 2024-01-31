@@ -104,6 +104,7 @@ provide('selectedTitle', selectedTitle);
 		padding-left: 30px;
 		width: 60%;
 		color: var(--transparentWhite70);
+		user-select: none;
 		.hr {
 			height: 2px;
 			margin-bottom: 20px;
@@ -132,11 +133,11 @@ provide('selectedTitle', selectedTitle);
 				position: absolute;
 				width: 100%;
 				height: 2px;
-				background-color: var(--green);
+				background-color: var(--transparentlightGray);
 				top: 45px;
 				left: 0;
 				border-radius: 0 0 10px 10px;
-				box-shadow: 0 0 20px var(--shadowGreen);
+				box-shadow: 0 0 20px var(--boxShadowGreen);
 			}
 		}
 	}
@@ -150,12 +151,17 @@ provide('selectedTitle', selectedTitle);
 				position: relative;
 				margin: 7px 0;
 				padding-left: 35px;
-
-				span:before {
-					position: absolute;
-					top: 5px;
-					left: 0;
-					color: var(--green);
+				display: flex;
+				svg {
+					width: 25px !important;
+					height: 25px !important;
+					#Vector {
+						stroke: var(--green);
+						fill: none;
+					}
+				}
+				span {
+					margin-left: 10px;
 				}
 			}
 		}
@@ -246,6 +252,9 @@ provide('selectedTitle', selectedTitle);
 		&-bottom {
 			grid-template-columns: repeat(1, 1fr);
 			grid-gap: 0;
+			ul li {
+				padding-left: 0;
+			}
 		}
 	}
 }

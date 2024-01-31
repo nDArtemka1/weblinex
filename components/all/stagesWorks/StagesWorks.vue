@@ -1,11 +1,23 @@
 <template>
 	<section id="4" class="stages-works container-content">
-		<div class="section-title" v-motion="visOnceBottom">
+		<div
+			class="section-title fadeoutbottom"
+			v-animateonscroll="{
+				enterClass: 'fadeinbottom',
+			}"
+			:style="{ transitionDelay: '50ms' }"
+		>
 			<div class="title">
 				<h2>Этапы работ по созданию сайта</h2>
 			</div>
 		</div>
-		<TabsWrapper v-motion="visOnceBottom">
+		<TabsWrapper
+			class="fadeoutbottom"
+			v-animateonscroll="{
+				enterClass: 'fadeinbottom',
+			}"
+			:style="{ transitionDelay: '50ms' }"
+		>
 			<Tab v-for="(tab, index) in stages" :key="tab" :title="tab.title">
 				<div class="tab-content-top">
 					<p class="tab-content-top-title">
@@ -17,14 +29,55 @@
 				<div class="tab-content-bottom">
 					<ul class="tab-content-bottom-right">
 						<li v-for="item in tab.tabConBotR">
-							<span class="fa fa-check" aria-hidden="true"></span
-							>{{ item.title }}
+							<div>
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g
+										id="SVGRepo_tracerCarrier"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									></g>
+									<g id="SVGRepo_iconCarrier">
+										<g id="Interface / Check">
+											<path
+												id="Vector"
+												d="M6 12L10.2426 16.2426L18.727 7.75732"
+												stroke-width="2"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											></path>
+										</g>
+									</g>
+								</svg>
+							</div>
+
+							<span>{{ item.title }}</span>
 						</li>
 					</ul>
 					<ul class="tab-content-bottom-left">
 						<li v-for="item in tab.tabConBotL">
-							<span class="fa fa-check" aria-hidden="true"></span
-							>{{ item.title }}
+							<div>
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g
+										id="SVGRepo_tracerCarrier"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									></g>
+									<g id="SVGRepo_iconCarrier">
+										<g id="Interface / Check">
+											<path
+												id="Vector"
+												d="M6 12L10.2426 16.2426L18.727 7.75732"
+												stroke-width="2"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											></path>
+										</g>
+									</g>
+								</svg>
+							</div>
+							<span>{{ item.title }}</span>
 						</li>
 					</ul>
 				</div>
@@ -34,11 +87,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Tab from '@/components/universal/tabs/Tab';
 import TabsWrapper from '@/components/universal/tabs/TabsWrapper';
-
-import visOnceBottom from '/assets/js/motions/visOnceBottom';
 
 const stages = ref([
 	{

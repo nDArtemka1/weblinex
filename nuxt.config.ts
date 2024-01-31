@@ -2,12 +2,17 @@
 export default defineNuxtConfig({
 	devtools: { enabled: false },
 	pages: true,
-	modules: [
-		'@nuxt/image',
-		'nuxt-ssr-cache',
-		'@vueuse/motion/nuxt',
-		'nuxt-viewport',
-	],
+	modules: ['@nuxt/image', 'nuxt-ssr-cache', 'nuxt-viewport', 'nuxt-primevue'],
+	primevue: {
+		usePrimeVue: false,
+		options: {
+			unstyled: true,
+			animateonscroll: true,
+		},
+		components: {
+			include: ['AnimateOnScroll'],
+		},
+	},
 	viewport: {
 		breakpoints: {
 			desktop: 1024,
@@ -35,10 +40,6 @@ export default defineNuxtConfig({
 			path: '~/components',
 		},
 	],
-	css: ['~/assets/scss/main.scss', '~/assets/scss/reset.scss'],
-	build: {
-		transpile: ['primevue', 'gsap'],
-	},
 	image: {
 		//dir: 'public/images/',
 		provider: 'twicpics',

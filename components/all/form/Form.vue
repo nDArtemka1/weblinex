@@ -20,7 +20,7 @@
 			</div>
 		</div>
 
-		<div class="input-box">
+		<div v-if="emailActive" class="input-box">
 			<label for="email">Ваш E-MAIL адрес</label>
 
 			<input
@@ -186,6 +186,12 @@ export default {
 		return { state, v$ };
 	},
 	props: {
+		emailActive: {
+			type: Boolean,
+			default() {
+				return true;
+			},
+		},
 		commentActive: {
 			type: Boolean,
 			default() {
@@ -270,8 +276,14 @@ export default {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 15px;
+	&-chekbox {
+		label {
+			color: rgb(215 215 215);
+		}
+	}
 	label {
 		margin-bottom: 10px;
+		color: #cacacacf;
 	}
 	input {
 		outline: none !important;
@@ -376,6 +388,4 @@ form {
 		}
 	}
 }
-
-
 </style>

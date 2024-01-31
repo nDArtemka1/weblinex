@@ -1,62 +1,93 @@
 <template>
-	<div>
-		<Swiper
-			:spaceBetween="30"
-			:hashNavigation="{
-				watchState: true,
-			}"
-			:navigation="{
-				prevEl: prev,
-				nextEl: next,
-			}"
-			:modules="modules"
-			class="rt-slider slider"
-			:effect="'coverflow'"
-			:grabCursor="true"
-			:centeredSlides="true"
-			:loop="true"
-			:slidesPerView="'auto'"
-			:coverflowEffect="{
-				rotate: 0,
-				stretch: 0,
-				depth: 100,
-				modifier: 2.5,
-				slideShadows: true,
-			}"
-			:initialSlide="0"
+	<Swiper
+		:spaceBetween="30"
+		:hashNavigation="{
+			watchState: true,
+		}"
+		:navigation="{
+			prevEl: prev,
+			nextEl: next,
+		}"
+		:modules="modules"
+		class="rt-slider slider"
+		:effect="'coverflow'"
+		:grabCursor="true"
+		:centeredSlides="true"
+		:loop="true"
+		:slidesPerView="'auto'"
+		:coverflowEffect="{
+			rotate: 0,
+			stretch: 0,
+			depth: 100,
+			modifier: 2.5,
+			slideShadows: true,
+		}"
+		:initialSlide="0"
+	>
+		<SwiperSlide
+			class="rt-slider-item"
+			v-for="(slide, index) in sliderItems"
+			:key="index"
 		>
-			<SwiperSlide
-				class="rt-slider-item"
-				v-for="(slide, index) in sliderItems"
-				:key="index"
-			>
-				<div class="rt-slider-item-title">
-					Сайт “<span>{{ slide.title }}</span
-					>”
-				</div>
-				<div
-					class="rt-slider-item-description"
-					v-html="slide.description"
-				></div>
-				<div class="rt-slider-item-bottom">
-					<div class="rt-slider-item-bottom-details">
-						<div class="rt-slider-item-price">
-							От <span>{{ slide.price }}</span> ₽
-						</div>
-						<div class="rt-slider-item-deadlines">
-							{{ slide.deadlines }}
-						</div>
+			<div class="rt-slider-item-title">
+				Сайт “<span>{{ slide.title }}</span
+				>”
+			</div>
+			<div class="rt-slider-item-description" v-html="slide.description"></div>
+			<div class="rt-slider-item-bottom">
+				<div class="rt-slider-item-bottom-details">
+					<div class="rt-slider-item-price">
+						От <span>{{ slide.price }}</span> ₽
 					</div>
-
-					<div class="rt-slider-item-btn">
-						<ArrowBtn :linkBtn="slide.href" />
+					<div class="rt-slider-item-deadlines">
+						{{ slide.deadlines }}
 					</div>
 				</div>
-			</SwiperSlide>
-		</Swiper>
 
-		<div ref="prev" class="swiper-btn-prev"></div>
-		<div ref="next" class="swiper-btn-next"></div>
+				<div class="rt-slider-item-btn">
+					<ArrowBtn :linkBtn="slide.href" />
+				</div>
+			</div>
+		</SwiperSlide>
+	</Swiper>
+
+	<div ref="prev" class="swiper-btn-prev">
+		<svg
+			viewBox="0 0 24 24"
+			xmlns="http://www.w3.org/2000/svg"
+			transform="rotate(180)"
+		>
+			<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+			<g
+				id="SVGRepo_tracerCarrier"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			></g>
+			<g id="SVGRepo_iconCarrier">
+				<path
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					d="M7.20696 20.7071C6.81643 20.3166 6.81643 19.6834 7.20696 19.2929L14.4998 12L7.20696 4.70712C6.81643 4.3166 6.81643 3.68343 7.20696 3.29291L7.91406 2.5858C8.30459 2.19528 8.93775 2.19528 9.32827 2.5858L17.6818 10.9394C18.2676 11.5251 18.2676 12.4749 17.6818 13.0607L9.32828 21.4142C8.93775 21.8048 8.30459 21.8048 7.91406 21.4142L7.20696 20.7071Z"
+				></path>
+			</g>
+		</svg>
+	</div>
+	<div ref="next" class="swiper-btn-next">
+		<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+			<g
+				id="SVGRepo_tracerCarrier"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			></g>
+			<g id="SVGRepo_iconCarrier">
+				<path
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					d="M7.20696 20.7071C6.81643 20.3166 6.81643 19.6834 7.20696 19.2929L14.4998 12L7.20696 4.70712C6.81643 4.3166 6.81643 3.68343 7.20696 3.29291L7.91406 2.5858C8.30459 2.19528 8.93775 2.19528 9.32827 2.5858L17.6818 10.9394C18.2676 11.5251 18.2676 12.4749 17.6818 13.0607L9.32828 21.4142C8.93775 21.8048 8.30459 21.8048 7.91406 21.4142L7.20696 20.7071Z"
+				></path>
+			</g>
+		</svg>
 	</div>
 </template>
 
@@ -69,11 +100,16 @@ import 'swiper/css';
 
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import {
+	Pagination,
+	Navigation,
+	EffectCoverflow,
+	Autoplay,
+} from 'swiper/modules';
 
 const props = defineProps(['sliderItems', 'navigation', 'pagination']);
 
-const modules = [Pagination, Navigation, EffectCoverflow];
+const modules = [Pagination, Navigation, EffectCoverflow, Autoplay];
 
 const prev = ref(null);
 const next = ref(null);
@@ -99,6 +135,7 @@ const next = ref(null);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		color: var(--transparentWhite40);
 		span {
 			color: var(--green);
 		}
@@ -119,6 +156,20 @@ const next = ref(null);
 			&-ditails {
 				display: flex;
 				flex-direction: column;
+			}
+		}
+		&-btn {
+			.arrow-btn {
+				&-a {
+					svg {
+						stroke: var(--green);
+					}
+				}
+				&-a:hover {
+					svg {
+						stroke: var(--black);
+					}
+				}
 			}
 		}
 		&-price {
@@ -147,7 +198,7 @@ const next = ref(null);
 
 	.swiper-slide-active {
 		transition: all 0.4s ease;
-		color: var(--white);
+		color: var(--lightGray);
 	}
 }
 .swiper-btn-next,
@@ -168,6 +219,11 @@ const next = ref(null);
 	height: 45px;
 	top: var(--swiper-navigation-top-offset, 50%);
 	transition: all 0.4s;
+	svg {
+		width: 25px;
+		fill: var(--green);
+		stroke: var(--green);
+	}
 }
 
 .swiper-btn-next::before {
@@ -206,19 +262,25 @@ const next = ref(null);
 
 .swiper-btn-prev {
 	left: var(--swiper-navigation-sides-offset, 60px);
+	svg {
+		margin-right: 2px;
+	}
 }
 .swiper-btn-next {
 	right: var(--swiper-navigation-sides-offset, 60px);
+	svg {
+		margin-left: 2px;
+	}
 }
 
-.swiper-btn-next:after {
-	content: '❯';
-	font-size: 22px;
-}
-.swiper-btn-prev:after {
-	content: '❮';
-	font-size: 22px;
-}
+// .swiper-btn-next:after {
+// 	content: '❯';
+// 	font-size: 22px;
+// }
+// .swiper-btn-prev:after {
+// 	content: '❮';
+// 	font-size: 22px;
+// }
 
 @media (max-width: 769px) {
 	.rt-slider .swiper-slide-active {

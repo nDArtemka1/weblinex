@@ -20,7 +20,7 @@
 import { ref, onMounted, computed } from 'vue';
 const viewport = useViewport();
 
-const offsets = [1, 2, 3, 4, 5];
+const offsets = ref([1, 2, 3, 4, 5]);
 
 const currentSection = ref('');
 

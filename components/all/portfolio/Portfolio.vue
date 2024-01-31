@@ -1,6 +1,12 @@
 <template>
 	<section id="3" class="portfolio container-content">
-		<div class="section-title" v-motion="visOnceBottom">
+		<div
+			class="section-title fadeoutbottom"
+			v-animateonscroll="{
+				enterClass: 'fadeinbottom',
+			}"
+			:style="{ transitionDelay: '50ms' }"
+		>
 			<div class="title">
 				<h2>Наше портфолио</h2>
 				<div class="title-info">
@@ -11,7 +17,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="portfolio-sliders" v-motion="visOnceBottom">
+		<div
+			class="portfolio-sliders fadeoutbottom"
+			v-animateonscroll="{
+				enterClass: 'fadeinbottom',
+			}"
+			:style="{ transitionDelay: '50ms' }"
+		>
 			<div class="portfolio-slider">
 				<PortfolioSlider
 					:navigation="true"
@@ -30,7 +42,6 @@
 import { ref } from 'vue';
 import PortfolioSlider from '@/components/universal/swiperSlider/PortfolioSlider';
 import PrimaryBtn from '@/components/all/buttons/PrimaryBtn';
-import visOnceBottom from '/assets/js/motions/visOnceBottom';
 
 const textBtn = ref('Смотреть все проекты');
 const linkBtn = ref('#');

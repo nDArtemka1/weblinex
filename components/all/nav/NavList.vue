@@ -37,7 +37,6 @@ const links = ref([
 	{ name: 'Главная', path: '/' },
 	{ name: 'Услуги', path: '/uslugi' },
 	{ name: 'Портфолио', path: '/portfolio' },
-
-	{ name: 'Контакты', path: '/portfolio' },
+	{ name: 'Контакты', path: '/contacts' },
 ]);
 </script>
