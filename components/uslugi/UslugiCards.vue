@@ -8,27 +8,69 @@
 				enterClass: 'fadeinbottom',
 			}"
 			:style="{ transitionDelay: card.tabletDelay + 'ms' }"
+			v-if="viewport.isGreaterThan('tabletMedium')"
 		>
-			<div class="uslugi-card-title">
-				<div>
-					Сайт “<span>{{ card.title }}</span
-					>”
-				</div>
+			<div class="uslugi-card-wrapper">
+				<div class="uslugi-card-title">
+					<div>
+						Сайт “<span>{{ card.title }}</span
+						>”
+					</div>
 
-				<div class="uslugi-card-price">
-					От <span>{{ card.price }}</span> ₽
-				</div>
-			</div>
-			<div class="uslugi-card-description" v-html="card.description"></div>
-			<div class="uslugi-card-bottom">
-				<div class="uslugi-card-bottom-details">
-					<div class="uslugi-card-deadlines">
-						От <span> {{ card.deadlines }}</span> дней.
+					<div class="uslugi-card-price">
+						От <span>{{ card.price }}</span> ₽
 					</div>
 				</div>
+				<div class="uslugi-card-description" v-html="card.description"></div>
+				<div class="uslugi-card-bottom">
+					<div class="uslugi-card-bottom-details">
+						<div class="uslugi-card-deadlines">
+							От <span> {{ card.deadlines }}</span> дней.
+						</div>
+					</div>
 
-				<div class="uslugi-card-btn">
-					<ArrowBtn :linkBtn="card.href" />
+					<div class="uslugi-card-btn">
+						<ArrowBtn :linkBtn="card.href" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="uslugi-card fadeoutbottom"
+			v-for="(card, index) in uslugiCards"
+			:key="index"
+			v-animateonscroll="{
+				enterClass: 'fadeinbottom',
+			}"
+			:style="{ transitionDelay: '100ms' }"
+			v-if="viewport.isLessThan('tabletMedium')"
+		>
+			<div class="uslugi-card-wrapper">
+				<div class="uslugi-card-title">
+					<div>
+						Сайт “<span>{{ card.title }}</span
+						>”
+					</div>
+
+					<div class="uslugi-card-price">
+						От <span>{{ card.price }}</span> ₽
+					</div>
+				</div>
+				<div class="uslugi-card-description" v-html="card.description"></div>
+				<div class="uslugi-card-bottom">
+					<div class="uslugi-card-bottom-details">
+						<div class="uslugi-card-price">
+							От <span>{{ card.price }}</span> ₽
+						</div>
+						<div class="uslugi-card-deadlines">
+							От <span> {{ card.deadlines }}</span> дней.
+						</div>
+					</div>
+
+					<div class="uslugi-card-btn">
+						<ArrowBtn :linkBtn="card.href" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -38,6 +80,8 @@
 <script setup>
 import { ref } from 'vue';
 import ArrowBtn from '@/components/all/buttons/ArrowBtn';
+
+const viewport = useViewport();
 
 const uslugiCards = ref([
 	{
@@ -115,7 +159,7 @@ const uslugiCards = ref([
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
-	padding: 30px;
+
 	transition: all 0.4s ease;
 	background: linear-gradient(
 		to bottom right,
@@ -124,12 +168,24 @@ const uslugiCards = ref([
 		#303030,
 		#303030
 	);
-	border: 1px solid var(--transparentlightGray);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+
 	span {
 		color: var(--green);
+	}
+	&-wrapper {
+		border-radius: 20px;
+		padding: 30px;
+		border: 1px solid var(--transparentlightGray);
+		height: 100%;
+		transition: all 0.4s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&-wrapper:hover {
+		cursor: pointer;
+		border: 1px solid var(--green);
+		box-shadow: 0 0 20px var(--shadowGreen);
 	}
 	&-title {
 		display: flex;
@@ -150,6 +206,9 @@ const uslugiCards = ref([
 			font-size: 25px;
 			line-height: 44px;
 			text-align: center;
+			.uslugi-card-price {
+				display: none;
+			}
 		}
 	}
 	&-btn {
@@ -169,9 +228,78 @@ const uslugiCards = ref([
 		}
 	}
 }
-.uslugi-card:hover {
-	cursor: pointer;
-	border: 1px solid var(--green);
-	box-shadow: 0 0 20px var(--shadowGreen);
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.uslugi-card {
+		&-title {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+}
+@media (min-width: 769px) and (max-width: 860px) {
+	.uslugi-card {
+		&-title {
+			justify-content: center;
+			flex-direction: column;
+		}
+		&-bottom {
+			justify-content: center;
+			flex-direction: column;
+		}
+		&-deadlines {
+			margin-bottom: 15px;
+		}
+	}
+}
+@media (max-width: 769px) {
+	.uslugi-cards {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@media (max-width: 577px) {
+	.uslugi-card {
+		&-title {
+			justify-content: center;
+			flex-direction: column;
+			font-size: max(18px, min(25px, var(--base-scale) * 5));
+			.uslugi-card-price {
+				display: none;
+			}
+		}
+		&-description {
+			display: -webkit-box;
+			-webkit-line-clamp: 6;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			margin: 20px 0;
+		}
+		&-bottom {
+			justify-content: center;
+			flex-direction: column;
+			&-details {
+				display: flex;
+				justify-content: space-between;
+				.uslugi-card-price {
+					display: block;
+				}
+			}
+		}
+		&-deadlines {
+			font-size: max(18px, min(20px, var(--base-scale) * 5));
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 426px) {
+	.uslugi-card {
+		&-bottom {
+			&-details {
+				flex-direction: column;
+			}
+		}
+	}
 }
 </style>

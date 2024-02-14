@@ -23,6 +23,10 @@
 			slideShadows: true,
 		}"
 		:initialSlide="0"
+		:autoplay="{
+			delay: 3000,
+			disableOnInteraction: false,
+		}"
 	>
 		<SwiperSlide
 			class="rt-slider-item"
@@ -120,7 +124,7 @@ const next = ref(null);
 	&-item {
 		user-select: none;
 		border-radius: 20px;
-		display: flex;
+		display: flex !important;
 		flex-direction: column;
 		padding: 30px;
 		transition: all 0.4s ease;

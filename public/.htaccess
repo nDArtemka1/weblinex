@@ -9,6 +9,14 @@ AddType application/x-font-woff .woff
 AddType application/x-font-woff2 .woff2
 AddType image/svg+xml .svg
 
+RewriteEngine On 
+
+RewriteCond %{HTTP_HOST} ^weblinex.ru [NC]
+
+RewriteCond %{SERVER_PORT} 80 
+
+RewriteRule ^(.*)$ https://weblinex.ru/$1 [R=301,L]
+
 <ifModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
 </ifModule>

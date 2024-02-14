@@ -63,7 +63,7 @@ const popupTitle = usePopupTitle();
 		}
 	}
 	&-body {
-		padding: 15px 30px;
+		padding: 15px 30px 30px 30px;
 		.form {
 			margin-top: 0;
 		}

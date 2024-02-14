@@ -115,12 +115,62 @@
 			</div>
 
 			<div v-if="response" class="status-p">
-				<span class="fa fa-check" aria-hidden="true"></span>
-				Заявка успешно отправлена.<br /><br />
-				Наши специалисты свяжутся с вами в ближайшее время!
+				<div class="status-p-top">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g
+							id="SVGRepo_tracerCarrier"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						></g>
+						<g id="SVGRepo_iconCarrier">
+							<g id="Interface / Check">
+								<path
+									id="Vector"
+									d="M6 12L10.2426 16.2426L18.727 7.75732"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+							</g>
+						</g>
+					</svg>
+					<p>Заявка успешно отправлена.</p>
+				</div>
+
+				<div class="status-p-bottom">
+					Наши специалисты свяжутся с вами в ближайшее время!
+				</div>
 			</div>
 
-			<div v-if="error" class="status-p">Серверная ошибка</div>
+			<div v-if="error" class="status-p status-p-error">
+				<svg
+					viewBox="0 0 24 24"
+					role="img"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-labelledby="errorIconTitle"
+					stroke="#dc3545"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					fill="none"
+					color="#000000"
+				>
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					></g>
+					<g id="SVGRepo_iconCarrier">
+						<title id="errorIconTitle">Error</title>
+						<path d="M12 8L12 13"></path>
+						<line x1="12" y1="16" x2="12" y2="16"></line>
+						<circle cx="12" cy="12" r="10"></circle>
+					</g>
+				</svg>
+				<p>Серверная ошибка</p>
+			</div>
 		</div>
 	</form>
 </template>
@@ -380,11 +430,33 @@ form {
 	display: flex;
 	justify-content: center;
 	&-p {
-		text-align: center;
 		margin-top: 20px;
-		.fa-check {
-			color: var(--green);
-			margin-right: 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&-top {
+			display: flex;
+			p {
+				margin-left: 20px;
+				margin-bottom: 15px;
+			}
+		}
+		&-bottom {
+			text-align: center;
+		}
+		svg {
+			width: 25px !important;
+			height: 25px !important;
+			#Vector {
+				stroke: var(--green);
+				fill: none;
+			}
+		}
+		&-error {
+			flex-direction: row;
+			svg {
+				margin-right: 15px;
+			}
 		}
 	}
 }

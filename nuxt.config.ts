@@ -24,6 +24,8 @@ export default defineNuxtConfig({
 			mobileWide: 577,
 
 			tablet: 992,
+			tabletMedium: 769,
+			tabletMedium1: 770,
 		},
 
 		cookieName: 'viewport',
@@ -32,6 +34,7 @@ export default defineNuxtConfig({
 			desktop: 'desktop',
 			mobile: 'mobile',
 			tablet: 'tablet',
+			tabletMedium: 'tabletMedium',
 		},
 		fallbackBreakpoint: 'desktop',
 	},

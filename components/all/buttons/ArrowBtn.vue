@@ -41,10 +41,7 @@ const props = defineProps(['linkBtn']);
 		transition: all 0.5s ease;
 		box-shadow: 0 0 20px var(--shadowGreen);
 		background-color: var(--boxShadowGreen);
-		.pi-chevron-right {
-			margin-left: 10px;
-			font-size: 16px;
-		}
+
 		span {
 			transition: all 0.5s ease;
 		}

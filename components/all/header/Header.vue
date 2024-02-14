@@ -162,11 +162,23 @@ const viewport = useViewport();
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			margin-top: 30px;
+			.input-box {
+				margin-bottom: 0;
+			}
 			.input-box:not(:last-child) {
 				margin-right: 20px;
 			}
 			.input-box-chekbox {
 				grid-column: 1 / span 3;
+				margin: 0;
+			}
+
+			.status {
+				grid-column: 1 / span 3;
+				margin-bottom: 30px;
+				&-p {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -189,6 +201,13 @@ const viewport = useViewport();
 					grid-column: 1 / span 2;
 				}
 				.input-box-chekbox {
+					grid-column: 1 / span 2;
+					margin-top: 20px;
+				}
+				button {
+					margin-top: 0;
+				}
+				.status {
 					grid-column: 1 / span 2;
 				}
 			}
@@ -241,13 +260,13 @@ const viewport = useViewport();
 			background-size: clamp(300px, 100%, 450px);
 		}
 		&-form {
+			flex-direction: column;
 			.form {
-				grid-template-columns: repeat(1, 1fr);
-				.input-box:nth-child(3) {
-					grid-column: 1 / span 1;
+				.input-box:not(:last-child) {
+					margin-right: 0;
 				}
-				.input-box-chekbox {
-					grid-column: 1 / span 1;
+				.input-box:nth-child(1) {
+					margin-right: 20px;
 				}
 			}
 		}
@@ -263,9 +282,9 @@ const viewport = useViewport();
 			}
 		}
 		&-form {
-			flex-direction: column;
 			&-title {
 				text-align: center;
+				font-size: max(16px, min(20px, calc(var(--base-scale) * 5)));
 			}
 			.form {
 				margin-top: 0;
@@ -310,6 +329,15 @@ const viewport = useViewport();
 		}
 		&-promo {
 			font-size: 16.5px;
+		}
+		&-form {
+			.form {
+				display: flex;
+				flex-direction: column;
+				.input-box:nth-child(1) {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 }
